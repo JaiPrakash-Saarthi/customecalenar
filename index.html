@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Glassmorphism Calendar | dyCalendarJS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script> -->
+    <link rel="stylesheet" href="dyCalendar.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div>
+        <span style="border: 1px solid #000000; padding: 5px 10px; margin-right: 10px; background: #FFFFFF;
+        border-radius: 7px; font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 23px;
+        color: #000000;">
+        <span id="selected-start-date-f-calendar" class="selected-date-f-calendar strt"> 12 May 2021 
+        </span>
+        <span> &nbsp; - &nbsp; </span>
+        <span class="selected-date-f-calendar endd"> 12 May 2021 
+        </span>
+        <script>
+            var strt = document.getElementsByClassName("selected-date-f-calendar");
+            strt[0].setAttribute('strt','strt');
+            strt[1].setAttribute('endd','endd');
+        </script>
+        <span id="dropdown-date-list" onclick="dropdownDateList()"><img src="./assets/dropdownicon.svg" alt="dropdown"></span>
+        <!-- <span style="position: absolute;">
+        <ul>
+          <li>last 7 days</li>
+          <li>last 15 days</li>
+          <li>last 1 month</li>
+        </ul>
+      </span> -->
+      </span>
+        <span onclick="calendarModalFun()">
+        <img src="" alt="calendar">
+        </span>
+      </div>
+    </div>
+    <!-- <section> -->
+        <div class="box">
+            <div class="containerr-s">
+                <div class="sub-container-1">
+                    <div class="s-top-div">
+                        <div class="s-select-date-range"> Select Date Range</div>
+                        <div class="s-cross-icon"><img src="./assets/crossIcon.svg" alt="Hide Icon"></div>
+                    </div>
+                    <div class="s-date-show-area">
+
+                        <span class="s-span-date-area start-date-class date-show-active " id="start-date" onclick="startDateSpan('start')"> 12 May 21 </span> &nbsp; - &nbsp;
+                        <span class="s-span-date-area end-date-class" onclick="startDateSpan('end')"> 12 May 21 </span>
+                        <span style="margin-left: 48px;"><img src="./assets/forwardIcon.svg" alt="forwardArrow"></span>
+                        <script>
+                            var tdaytext = document.getElementsByClassName("s-span-date-area");
+                                var dateee = new Date();
+                                var mntarr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                                var day = dateee.getDate();
+                                var month = dateee.getMonth();
+                                var year = dateee.getFullYear();
+                                dateee = day +" "+ mntarr[month] + " "+year.toString().substring(2,4);
+                                tdaytext[0].innerHTML= dateee;
+                                tdaytext[1].innerHTML = dateee;
+                                var selectedDate = document.getElementsByClassName('selected-date-f-calendar');
+                                selectedDate[0].innerHTML = dateee; 
+                                selectedDate[1].innerHTML = dateee;  
+                        </script>
+                    </div>
+                </div>
+            <div id="dycalendar">
+                
+            </div>
+            <!-- <div>
+                <img src="./assets/forwardIcon.svg" alt="forwardArrow">
+            </div> -->
+            </div>
+        </div>
+    <!-- </section> -->
+    <script src="dycalendar.js"></script>
+    <script>
+        dycalendar.draw({
+            target: '#dycalendar',
+            type: 'month',
+            dayformat: "full",
+            monthformat:'full',
+            highlighttargetdate:true,
+            prevnextbutton: 'show'
+        })
+    </script>
+
+    <script>
+        function myChangeMonthFunction(e){
+            //console.log("jai"+e);
+            //console.log(e);
+            dycalendar.myChangeFunction(e);
+               
+        }
+    </script>
+   <script>
+       var jai;
+        function myFunction(id) {
+            var addClassActiveDate = document.getElementsByClassName("addclassactiveDate");
+            //console.log(addClassActiveDate[0]);
+               addClassActiveDate[0].classList.remove("addclassactiveDate");
+            id.classList.add("addclassactiveDate");
+           // console.log(id);
+            
+            var texxt = id.innerHTML;
+            var startMonthYear = document.getElementById('date-year');
+            var dateTab = document.getElementById("start-date");
+                var len = startMonthYear.innerHTML.toString().length;
+                dateTab.innerHTML = texxt +" "+ startMonthYear.innerHTML.toString().substring(0,3) +" " + startMonthYear.innerHTML.toString().substring(len-2,len);
+                dateTab.removeAttribute('id');
+                dateTab.classList.remove("date-show-active");
+                var dddd = document.getElementsByClassName("end-date-class");
+                dddd[0].id = 'start-date';
+                dddd[0].classList.add("date-show-active");
+
+    }
+    function startDateSpan(key){
+        if(key === 'end'){
+            var startSpan = document.getElementsByClassName("start-date-class");
+            var endSpan = document.getElementsByClassName("end-date-class");
+           // var element = document.getElementById("myDIV");
+                startSpan[0].classList.remove("date-show-active");
+            startSpan[0].removeAttribute('id');
+            endSpan[0].classList.add("date-show-active");
+           // endSpan[0].removeAttribute('id');
+                endSpan[0].id = 'start-date';
+            //     var addClassActiveDate = document.getElementsByClassName("addclassactiveDate");
+            // console.log(addClassActiveDate[0]);
+            //    addClassActiveDate[0].classList.remove("addclassactiveDate");
+            // id.classList.add("addclassactiveDate");
+        }
+        else{
+            var startSpan = document.getElementsByClassName("start-date-class");
+            var endSpan = document.getElementsByClassName("end-date-class");
+            endSpan[0].classList.remove("date-show-active");
+            startSpan[0].classList.add("date-show-active");
+                endSpan[0].removeAttribute('id');
+                startSpan[0].id = 'start-date';
+        }
+    }
+    </script>
+</body>
+</html>

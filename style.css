@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.box{
+    position: relative;
+    z-index: 1000;
+    top: 100px;
+    left: 35%;
+}
+.addclassactiveDate{
+    background-color:#2F80ED;
+    color: #fff !important; 
+}
+
+.containerr-s{
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    background: #FFFFFF;
+    box-shadow: 0px 96.7895px 77.4316px rgba(36, 69, 152, 0.05), 0px 48.9997px 33.7554px rgba(36, 69, 152, 0.03375), 0px 19.3579px 12.5826px rgba(36, 69, 152, 0.025), 0px 4.23454px 4.47652px rgba(36, 69, 152, 0.01625);
+    border-radius: 51px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-container-1{
+    width: 100% !important;
+}
+.s-top-div{
+    width: 100%;
+    display: flex;
+    padding: 14px 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+.s-select-date-range{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.s-date-show-area{
+    padding: 14px 10%;
+}
+.s-span-date-area{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    /* min-width: 250px !important; */
+    font-size: 20px;
+    padding: 7px;
+    line-height: 23px;
+    color: #000000;
+    cursor: pointer;
+}
+/* .date-s-div{
+    width: 90%;
+    display: flex;
+} */
+.date-show-active{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px; 
+    /* min-width: 250px !important;  */
+    color: #000000;
+    background: #FFFFFF;
+    border: 3px solid #2F80ED;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#dycalendar{
+    width: 100%;
+    padding: 20px;
+}
+#dycalendar table{
+    width:100%;
+    /* margin-top:40px; */
+    border-spacing: 5px;
+}
+
+#dycalendar table tr:nth-child(1) td{
+    background: #fff;
+    /* color: #111; */
+    color: #333333;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13.872px;
+    line-height: 22px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+#dycalendar table tr:nth-child(1) td:hover{
+    background: #fff;
+    /* color: #111; */
+    color: #333333 !important;
+}
+
+#dycalendar table td{
+    /* color: #fff; */
+    color: #3C3844;
+    /* padding: 10px; */
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19.4207px;
+    /* line-height: 31px; */
+}
+
+#dycalendar table td:hover{
+    /* background: #fff;
+    color: #111 !important; */
+    background-color: #6FCF97;
+    color: #fff !important;
+}
+
+.dycalendar-month-container .dycalendar-today-date,
+.dycalendar-month-container .dycalendar-target-date{
+    /* background: #fff; */
+    background-color: #6FCF97;
+    color: #fff !important;
+}
+
+.dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn.prev-btn{
+    background: #fff;
+    color: #111;
+    width: 44px;
+    height: 38px;
+    left: 4px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+.dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn.next-btn{
+    background: #fff;
+    color: #111;
+    width: 44px;
+    height: 38px;
+    right: 4px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.dycalendar-month-container .dycalendar-span-month-year{
+    /* color:#fff; */
+    color: #333333;
+    font-size: 1.5em;
+    font-weight: 500;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22.1951px;
+    line-height: 33px;
+}
+
+
