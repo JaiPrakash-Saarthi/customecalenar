@@ -102,13 +102,23 @@
         }
     </script>
    <script>
-       var jai;
+       var jai = true;
         function myFunction(id) {
-            var addClassActiveDate = document.getElementsByClassName("addclassactiveDate");
+            if(jai){
+                var addClassActiveDate = document.getElementsByClassName("addclassactiveDate");
             //console.log(addClassActiveDate[0]);
                addClassActiveDate[0].classList.remove("addclassactiveDate");
             id.classList.add("addclassactiveDate");
+            jai = false;
+            }
+            else{
+                var addClassActiveDate = document.getElementsByClassName("addclassactiveDatee");
+            //console.log(addClassActiveDate[0]);
+               addClassActiveDate[0].classList.remove("addclassactiveDatee");
+            id.classList.add("addclassactiveDatee");
            // console.log(id);
+            }
+           
             
             var texxt = id.innerHTML;
             var startMonthYear = document.getElementById('date-year');
@@ -132,6 +142,7 @@
             endSpan[0].classList.add("date-show-active");
            // endSpan[0].removeAttribute('id');
                 endSpan[0].id = 'start-date';
+                jai= false;
             //     var addClassActiveDate = document.getElementsByClassName("addclassactiveDate");
             // console.log(addClassActiveDate[0]);
             //    addClassActiveDate[0].classList.remove("addclassactiveDate");
@@ -144,6 +155,7 @@
             startSpan[0].classList.add("date-show-active");
                 endSpan[0].removeAttribute('id');
                 startSpan[0].id = 'start-date';
+                jai=true;
         }
     }
     </script>

@@ -90,11 +90,13 @@
             if (data.today.date === count && data.today.monthIndex === data.monthIndex && option.highlighttoday === true) {
                 td.setAttribute("class", "dycalendar-today-date");
                 td.classList.add("addclassactiveDate");
+                td.classList.add("addclassactiveDatee");
                 
             }
             if (option.date === count && option.month === data.monthIndex && option.highlighttargetdate === true) {
                 td.setAttribute("class", "dycalendar-target-date");
                 td.classList.add("addclassactiveDate");
+                td.classList.add("addclassactiveDatee");
             }
             tr.appendChild(td);
             count = count + 1;
@@ -118,10 +120,12 @@
                 if (data.today.date === count && data.today.monthIndex === data.monthIndex && option.highlighttoday === true) {
                     td.setAttribute("class", "dycalendar-today-date");
                     td.classList.add("addclassactiveDate");
+                    td.classList.add("addclassactiveDatee");
                 }
                 if (option.date === count && option.month === data.monthIndex && option.highlighttargetdate === true) {
                     td.setAttribute("class", "dycalendar-target-date");
                     td.classList.add("addclassactiveDate");
+                    td.classList.add("addclassactiveDatee");
                 }
                 count = count + 1;
                 tr.appendChild(td);
